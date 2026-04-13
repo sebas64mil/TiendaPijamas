@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Tienda</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <header class="hero">
+      <h1>🛒 Mi Tienda</h1>
+      <p>Tu descripción aquí</p>
+
+      <div class="filtros">
+        <label for="categoria">Filtrar por categoría:</label>
+        <select id="categoria">
+          <option value="todos">Todos</option>
+        </select>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section id="productos" class="productos"></section>
+
+      <aside class="carrito">
+        <h2>🛒 Carrito</h2>
+        <p>Productos: <span id="cantidad-carrito">0</span></p>
+
+        <ul id="lista-carrito"></ul>
+
+        <p>Total: <span id="total">$0</span></p>
+
+        <button onclick="vaciarCarrito()">Vaciar</button>
+        <button onclick="finalizarCompra()">Pagar</button>
+
+        <div id="paypal-button-container"></div>
+      </aside>
+    </main>
+
+    <section>
+      <h2>¿Por qué comprar aquí?</h2>
+      <p>Agrega beneficios de tu negocio</p>
+    </section>
+
+    <section>
+      <h2>Recomendados</h2>
+      <div id="recomendados"></div>
+    </section>
+
+    <section>
+      <h2>Top tienda</h2>
+      <div id="top-elo"></div>
+    </section>
+
+    <section>
+      <h2>Duelo de productos</h2>
+      <div id="duelo-container"></div>
+    </section>
+  </div>
+
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=COP"></script>
+  <script src="script.js"></script>
+</body>
+</html>

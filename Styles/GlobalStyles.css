@@ -1,0 +1,62 @@
+body {
+  font-family: "Fustat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ¿Por qué comprar aquí? */
+.por-que-comprar-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2.5rem auto 2.5rem auto;
+  padding: 0 2vw;
+}
+.por-que-comprar-title {
+  color: #6B3B13;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.por-que-comprar-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.por-que-comprar-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  width: 300px;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.2rem 1.5rem 1.2rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+  text-align: center;
+}
+.por-que-comprar-card:hover {
+  box-shadow: 0 4px 24px rgba(131,202,142,0.18);
+  transform: translateY(-4px) scale(1.03);
+}
+.por-que-comprar-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1.2rem;
+}
+.por-que-comprar-card h3 {
+  font-family: "Grandstander", cursive;
+  color: #4A2C0A;
+  margin-bottom: 0.7rem;
+  font-size: 1.25rem;
+}
+.por-que-comprar-card p {
+  color: #444;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+/* Títulos grandes */
+.titulo-grande, .navbar-title {
+  font-family: "Grandstander", cursive !important;
+}

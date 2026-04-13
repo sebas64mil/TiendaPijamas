@@ -1,0 +1,238 @@
+/* Sección de productos */
+.productos-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 3rem auto;
+    padding: 0 2vw;
+}
+
+.productos-title {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #6B3B13;
+    text-align: center;
+}
+
+.productos-filtros {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.productos-filtros label {
+    font-family: "Fustat", sans-serif;
+    color: #333;
+}
+
+.productos-filtros select {
+    font-family: "Fustat", sans-serif;
+    font-size: 1rem;
+    padding: 0.3rem 1.2rem 0.3rem 0.7rem;
+    border-radius: 6px;
+    border: 1px solid #bdbdbd;
+    background: #f8f8f8;
+    color: #333;
+    outline: none;
+    transition: border 0.2s;
+}
+.productos-filtros select:focus {
+    border: 1.5px solid #83CA8E;
+}
+
+.productos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: center;
+}
+
+.producto-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.2rem 1rem 1.5rem 1rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+}
+.producto-card:hover {
+    box-shadow: 0 4px 24px rgba(131,202,142,0.18);
+    transform: translateY(-4px) scale(1.03);
+}
+
+
+.producto-img-container {
+    width: 100%;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    border-radius: 10px;
+    margin-bottom: 0.7rem;
+    position: relative;
+}
+
+.producto-img {
+    width: 90%;
+    height: 90%;
+    max-width: 240px;
+    max-height: 240px;
+    object-fit: contain;
+    display: block;
+}
+
+.producto-info-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 0.7rem;
+    gap: 1rem;
+}
+
+.producto-info-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+}
+
+.producto-nombre {
+    font-family: "Grandstander", cursive;
+    font-size: 0.97rem !important;
+    color: #222;
+    font-weight: 700;
+    margin-bottom: 0.1rem;
+    text-align: left;
+    max-width: 170px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.producto-precio {
+    font-family: "Fustat", sans-serif;
+    font-size: 1.15rem;
+    color: #2d2d2d;
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+    text-align: left;
+}
+
+.producto-add-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    background: #83CA8E;
+    color: #fff;
+    font-family: "Fustat", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    min-width: 44px;
+    min-height: 44px;
+}
+.producto-add-btn:hover {
+    background: #6bb87a;
+}
+
+.add-cart-icon {
+    width: 26px;
+    height: 26px;
+    filter: brightness(0) invert(1);
+}
+
+.producto-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.producto-nombre {
+.producto-info-col {
+    position: relative;
+}
+
+.producto-nombre {
+    font-family: "Grandstander", cursive;
+    font-size: 1.2rem;
+    color: #6B3B13;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.producto-precio {
+    font-family: "Fustat", sans-serif;
+    font-size: 1.1rem;
+
+    cursor: pointer;
+}
+
+/* Tooltip para mostrar el nombre completo */
+.producto-nombre::after {
+    content: attr(data-fullname);
+    position: absolute;
+    left: 0;
+    top: 120%;
+    background: #222;
+    color: #fff;
+    padding: 0.35em 0.7em;
+    border-radius: 6px;
+    font-size: 0.98rem;
+    font-family: "Grandstander", cursive;
+    white-space: pre-line;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.18s;
+    min-width: 180px;
+    max-width: 320px;
+    text-align: left;
+}
+.producto-nombre:hover::after {
+    opacity: 1;
+}
+    color: #2d2d2d;
+    margin-bottom: 0.7rem;
+}
+
+.producto-add-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #83CA8E;
+    color: #fff;
+    font-family: "Fustat", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.producto-add-btn:hover {
+    background: #6bb87a;
+}
+
+.add-cart-icon {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(1);
+}
