@@ -29,9 +29,8 @@
 </head>
 <body>
 
+
     <nav class="navbar">
-        <div class="navbar-left">
-        </div>
         <div class="navbar-center">
             <span class="navbar-title">Pijamas</span>
             <img src="Assets/Img/Logo.png" alt="oso" class="navbar-bear">
@@ -44,6 +43,22 @@
                 <img src="Assets/Icons/CarritodeCompra.png" alt="Carrito" class="navbar-icon" id="cart-icon">
                 <span class="cart-count" id="cart-count">0</span>
             </div>
+            <button class="navbar-menu-btn" id="navbar-menu-btn" aria-label="Abrir menú">
+                <img src="Assets/Icons/Menu.png" alt="Menú" class="navbar-menu-icon">
+            </button>
+        </div>
+        <div class="navbar-mobile-menu" id="navbar-mobile-menu">
+            <div class="navbar-mobile-icons">
+                <img src="Assets/Icons/Busqueda.png" alt="Buscar" class="navbar-icon navbar-mobile-icon">
+                <img src="Assets/Icons/IconoUser.png" alt="Usuario" class="navbar-icon navbar-mobile-icon">
+                <div class="navbar-cart-container navbar-mobile-cart">
+                    <img src="Assets/Icons/CarritodeCompra.png" alt="Carrito" class="navbar-icon" id="cart-icon-mobile">
+                    <span class="cart-count" id="cart-count-mobile">0</span>
+                </div>
+            </div>
+            <a href="#" class="navbar-mobile-link">Inicio</a>
+            <a href="#" class="navbar-mobile-link">Productos</a>
+            <a href="#" class="navbar-mobile-link">Contacto</a>
         </div>
     </nav>
 
@@ -157,5 +172,6 @@
         </div>
     </footer>
 
+<script src="JS/navbar-responsive.js"></script>
 </body>
 </html>
