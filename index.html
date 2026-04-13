@@ -18,6 +18,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&display=swap" rel="stylesheet">
+
+<!-- SDK de PayPal para pruebas (client-id=sb) -->
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=COP"></script>
 </head>
 <body>
 
@@ -53,6 +56,18 @@
                 <button id="cart-trash-btn" class="cart-trash-btn">
                     <img src="Assets/Icons/Trash.png" alt="Vaciar carrito">
                 </button>
+            </div>
+            <div id="payment-buttons-container" class="payment-buttons-container">
+                <button id="credit-card-btn" class="credit-card-btn">
+                    <img src="Assets/Icons/CreditCard.png" alt="Tarjeta de crédito" class="icon-btn">
+                    <span>Pagar con tarjeta</span>
+                </button>
+                <div id="paypal-button-container" class="paypal-btn-container">
+                    <button id="paypal-btn" class="paypal-btn">
+                        <img src="Assets/Icons/Paypal.png" alt="PayPal" class="icon-btn">
+                        <span>Pagar con PayPal</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>

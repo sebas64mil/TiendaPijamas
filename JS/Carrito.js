@@ -1,4 +1,3 @@
-
 // --- LÓGICA DEL CARRITO DE COMPRAS ---
 document.addEventListener('DOMContentLoaded', function() {
 	let carrito = new Map();
@@ -114,10 +113,34 @@ document.addEventListener('DOMContentLoaded', function() {
 				updateCartPopup();
 			});
 		}
+
+		// --- BOTONES DE PAGO (HTML ESTÁTICO) ---
+		let paymentBtns = document.getElementById('payment-buttons-container');
+		if (paymentBtns) {
+			if (empty) {
+				paymentBtns.style.display = 'none';
+			} else {
+				paymentBtns.style.display = 'flex';
+			}
+			// Conectar eventos a la lógica de productos.js
+			setTimeout(() => {
+				const creditBtn = document.getElementById('credit-card-btn');
+				if (creditBtn) {
+					creditBtn.onclick = function() {
+						if (window.pagarConTarjeta) window.pagarConTarjeta();
+					};
+				}
+				const paypalBtn = document.getElementById('paypal-btn');
+				if (paypalBtn) {
+					paypalBtn.onclick = function() {
+						if (window.inicializarPayPal) window.inicializarPayPal();
+					};
+				}
+			}, 100);
+		}
 	}
 
-	// Cerrar popup al hacer clic fuera de él o en el icono si ya está abierto
-	// Switch: click en icono abre/cierra popup
+
 	if (cartIcon) {
 		cartIcon.addEventListener('click', function(e) {
 			e.stopPropagation();
@@ -128,7 +151,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 		});
 	}
-	// Cerrar popup al hacer clic fuera de él (pero no en el icono)
 	document.addEventListener('mousedown', function(e) {
 		if (cartPopup.style.display === 'block') {
 			if (!cartPopup.contains(e.target) && e.target !== cartIcon) {
@@ -137,12 +159,10 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 	});
 
-	// Solo permite añadir desde la card si NO está en el carrito
 	function agregarAlCarrito(producto) {
 		if (!producto || !producto.nombre) return;
 		const key = producto.nombre;
 		if (carrito.has(key)) {
-			// No añadir de nuevo si ya existe
 			return;
 		} else {
 			carrito.set(key, { ...producto, cantidad: 1 });
@@ -150,6 +170,22 @@ document.addEventListener('DOMContentLoaded', function() {
 		updateCartCount();
 		updateCartPopup();
 	}
+
+	// Exponer funciones globales para pago y total
+	window.totalDelCarrito = function() {
+		let total = 0;
+		carrito.forEach((item) => {
+			total += item.precio * item.cantidad;
+		});
+		return total;
+	};
+	window.vaciarCarrito = function(silencioso = true) {
+		carrito.clear();
+		updateCartCount();
+		updateCartPopup();
+		if (!silencioso) alert('Carrito vaciado');
+	};
+	window.formatearPrecio = formatearPrecio;
 
 	window.agregarAlCarrito = agregarAlCarrito;
 	updateCartCount();

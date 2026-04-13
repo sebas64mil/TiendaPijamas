@@ -1,4 +1,3 @@
-
 // Array de productos de ejemplo
 window.productos = [
   {
@@ -77,3 +76,65 @@ function renderProductos() {
 }
 
 document.addEventListener('DOMContentLoaded', renderProductos);
+
+// --- Lógica de pago con PayPal ---
+window.inicializarPayPal = function() {
+  if (!window.paypal) return;
+  const paypalContainer = document.getElementById("paypal-button-container");
+  if (paypalContainer) paypalContainer.innerHTML = ""; // Limpia antes de renderizar
+  paypal.Buttons({
+    createOrder: function (data, actions) {
+      const total = window.totalDelCarrito ? window.totalDelCarrito() : 0;
+      if (total <= 0) {
+        alert("Agrega productos antes de pagar.");
+        return;
+      }
+      return actions.order.create({
+        purchase_units: [
+          {
+            amount: {
+              value: total.toFixed(0)
+            }
+          }
+        ]
+      });
+    },
+    onApprove: function (data, actions) {
+      return actions.order.capture().then(function (details) {
+        const nombre = details?.payer?.name?.given_name || "cliente";
+        alert(`Pago exitoso. Gracias ${nombre} 🙌`);
+        if (window.vaciarCarrito) window.vaciarCarrito(false);
+      });
+    },
+    onError: function (err) {
+      console.error(err);
+      alert("Error en el pago con PayPal");
+    }
+  }).render("#paypal-button-container");
+};
+
+// --- Lógica de simulación de tarjeta de crédito ---
+window.pagarConTarjeta = function() {
+  const total = window.totalDelCarrito ? window.totalDelCarrito() : 0;
+  if (total <= 0) {
+    alert("Tu carrito está vacío.");
+    return;
+  }
+  const numero = prompt("Ingresa número de tarjeta (16 dígitos):");
+  const nombre = prompt("Nombre en la tarjeta:");
+  const cvv = prompt("CVV:");
+  if (!numero || numero.length !== 16 || isNaN(numero)) {
+    alert("Número de tarjeta inválido");
+    return;
+  }
+  if (!cvv || cvv.length < 3) {
+    alert("CVV inválido");
+    return;
+  }
+  if (!nombre) {
+    alert("Nombre requerido");
+    return;
+  }
+  alert(`Pago aprobado por ${window.formatearPrecio ? window.formatearPrecio(total) : total} 🎉`);
+  if (window.vaciarCarrito) window.vaciarCarrito(false);
+};

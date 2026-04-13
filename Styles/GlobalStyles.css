@@ -1,3 +1,93 @@
+/* Botones de pago en el carrito */
+.payment-buttons-container {
+  display: none;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.credit-card-btn {
+  background: #83CA8E;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Fustat", sans-serif;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.credit-card-btn:hover {
+  background: #6bb87a;
+}
+.paypal-btn {
+  background: #AECDE8;
+  color: #222;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Fustat", sans-serif;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.paypal-btn:hover {
+  background: #8dbad6;
+}
+.icon-btn {
+  width: 36px;
+  height: 36px;
+}
+/* Botones de pago en el carrito */
+#payment-buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+#credit-card-btn {
+  background: #83CA8E;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Fustat", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#credit-card-btn:hover {
+  background: #6bb87a;
+}
+#paypal-btn {
+  background: #AECDE8;
+  color: #222;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Fustat", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#paypal-btn:hover {
+  background: #8dbad6;
+}
 body {
   font-family: "Fustat", sans-serif;
   margin: 0;
