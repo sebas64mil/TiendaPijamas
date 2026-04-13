@@ -4,7 +4,7 @@ window.productos = [
   {
     nombre: "Pijama de poliéster ligera con estampado de Stitch",
     precio: 49900,
-    imagen: "https://drive.google.com/uc?export=view&id=1okfuKgC32xniBKo1wT_es8rOhdV_9WOs",
+    imagen: "https://drive.google.com/file/d/1okfuKgC32xniBKo1wT_es8rOhdV_9WOs/view?usp=drive_link",
     alt: "Pijama Producto 1"
   },
   {
