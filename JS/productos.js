@@ -2,39 +2,39 @@
 // Array de productos de ejemplo
 window.productos = [
   {
-    nombre: "Pijama de poliéster ligera con estampado de Stitch",
-    precio: 49900,
-    imagen: "https://drive.google.com/file/d/1okfuKgC32xniBKo1wT_es8rOhdV_9WOs/view?usp=drive_link",
+    nombre: "Algodón para dama pantalón largo ",
+    precio: 50000,
+    imagen: "Assets/Img/pijama1.jpeg",
     alt: "Pijama Producto 1"
   },
   {
-    nombre: "Pijama de algodón suave con estampado de ositos",
-    precio: 52900,
-    imagen: "Assets/Img/Porducto1.png",
+    nombre: "Algodón para hombre pantalón largo ",
+    precio: 48000,
+    imagen: "Assets/Img/pijama2.jpeg",
     alt: "Pijama Producto 2"
   },
   {
-    nombre: "Pijama de franela térmica para invierno",
-    precio: 59900,
-    imagen: "Assets/Img/Porducto1.png",
+    nombre: "Pijama Ceda para dama",
+    precio: 65000,
+    imagen: "Assets/Img/pijama3.jpeg",
     alt: "Pijama Producto 3"
   },
   {
-    nombre: "Pijama de unicornio para niños",
-    precio: 48900,
-    imagen: "Assets/Img/Porducto1.png",
+    nombre: "Buso pantalón",
+    precio: 98000,
+    imagen: "Assets/Img/pijama4.jpeg",
     alt: "Pijama Producto 4"
   },
   {
-    nombre: "Pijama de dos piezas con rayas pastel",
-    precio: 51900,
-    imagen: "Assets/Img/Porducto1.png",
+    nombre: "Peluches con cobija",
+    precio: 110000,
+    imagen: "Assets/Img/pijama5.jpeg",
     alt: "Pijama Producto 5"
   },
   {
-    nombre: "Pijama enteriza con capucha de animalitos",
-    precio: 56900,
-    imagen: "Assets/Img/Porducto1.png",
+    nombre: "Pijama en botón ceda",
+    precio: 60000,
+    imagen: "Assets/Img/pijama6.jpeg",
     alt: "Pijama Producto 6"
   }
 ];
