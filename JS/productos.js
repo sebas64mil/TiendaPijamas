@@ -4,44 +4,59 @@ window.productos = [
     nombre: "Algodón para dama pantalón largo ",
     precio: 50000,
     imagen: "Assets/Img/pijama1.jpeg",
-    alt: "Pijama Producto 1"
+    alt: "Pijama Producto 1",
+    type: "mujer"
   },
   {
     nombre: "Algodón para hombre pantalón largo ",
     precio: 48000,
     imagen: "Assets/Img/pijama2.jpeg",
-    alt: "Pijama Producto 2"
+    alt: "Pijama Producto 2",
+    type: "hombre"
   },
   {
     nombre: "Pijama Ceda para dama",
     precio: 65000,
     imagen: "Assets/Img/pijama3.jpeg",
-    alt: "Pijama Producto 3"
+    alt: "Pijama Producto 3",
+    type: "mujer"
   },
   {
     nombre: "Buso pantalón",
     precio: 98000,
     imagen: "Assets/Img/pijama4.jpeg",
-    alt: "Pijama Producto 4"
+    alt: "Pijama Producto 4",
+    type: "mujer"
   },
   {
     nombre: "Peluches con cobija",
     precio: 110000,
     imagen: "Assets/Img/pijama5.jpeg",
-    alt: "Pijama Producto 5"
+    alt: "Pijama Producto 5",
+    type: "hombre"
   },
   {
     nombre: "Pijama en botón ceda",
     precio: 60000,
     imagen: "Assets/Img/pijama6.jpeg",
-    alt: "Pijama Producto 6"
+    alt: "Pijama Producto 6",
+    type: "mujer"
   }
 ];
 
-function renderProductos() {
+function renderProductos(filtro = "todas") {
   const container = document.querySelector('.productos-container');
   container.innerHTML = '';
-  window.productos.forEach((producto, idx) => {
+  let productosFiltrados = window.productos;
+  if (filtro === "hombre" || filtro === "mujer") {
+    productosFiltrados = window.productos.filter(p => (p.type && p.type.toLowerCase() === filtro));
+  }
+  if (productosFiltrados.length === 0) {
+    container.innerHTML = '<p style="text-align:center;color:#888;">No hay productos para esta categoría.</p>';
+    return;
+  }
+  productosFiltrados.forEach((producto) => {
+    const idx = window.productos.indexOf(producto);
     const card = document.createElement('div');
     card.className = 'producto-card';
     card.innerHTML = `
@@ -60,8 +75,6 @@ function renderProductos() {
     `;
     container.appendChild(card);
   });
-
-  // Conectar botones al método agregarAlCarrito
   setTimeout(() => {
     const btns = document.querySelectorAll('.producto-add-btn');
     btns.forEach(btn => {
@@ -75,7 +88,15 @@ function renderProductos() {
   }, 100);
 }
 
-document.addEventListener('DOMContentLoaded', renderProductos);
+document.addEventListener('DOMContentLoaded', () => {
+  renderProductos();
+  const filtro = document.getElementById('tipo-pijama');
+  if (filtro) {
+    filtro.addEventListener('change', function() {
+      renderProductos(this.value);
+    });
+  }
+});
 
 // --- Lógica de pago con PayPal ---
 window.inicializarPayPal = function() {
